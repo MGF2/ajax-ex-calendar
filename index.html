@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <title>Calendar Ajax Moment</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <button id="prev" type="button" name="button"> <<< </button>
+      <h1 class="month" data-this-date="2018-01-01">
+        <p class="month"></p>
+        <p class="year"></p>
+      </h1>
+      <button id="next" type="button" name="button"> >>> </button>
+
+      <ul class="month-list"></ul>
+
+    </div>
+
+    <script id="day-template" type="text/x-handlebars-template">
+
+      <li data-complete-date="{{completeDate}}">{{day}} {{month}}</li>
+
+    </script>
+
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
