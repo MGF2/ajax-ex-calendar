@@ -8,6 +8,18 @@ $(document).ready(function(){
   //inserimento festività
   insertHolidays(today);
 
+  $('#next').click(function() {
+
+    next(today);
+
+  });
+
+
+  $('#prev').click(function() {
+
+    prev(today);
+
+  });
 
 
 });
@@ -24,6 +36,9 @@ function addZero(n) {
 
 
 function insertDays(data) {
+
+  $('.month-list').empty();
+
   var month = data.format('MMMM');
   var year = data.format('YYYY');
 
@@ -92,8 +107,26 @@ function insertHolidays(data) {
     }
   );
 
+}
 
+function next(data){
+    if (data.month() == 11){
+        alert('Non puoi proseguire');
+    } else {
+        data.add(1, 'months');
+        insertDays(data);
+        insertHolidays(data);
+    }
+}
 
+function prev(data){
+    if (data.month() == 0){
+        alert('Non puoi proseguire');
+    } else {
+        data.subtract(1, 'months');
+        insertDays(data);
+        insertHolidays(data);
+    }
 }
 
 
